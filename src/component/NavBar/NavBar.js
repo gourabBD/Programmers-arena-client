@@ -74,10 +74,10 @@ const NavBar = () => {
                   </>
                 )}
               </div>
-              <div>
+              <div >
                 
                  {
-                 theme? <Button className='ms-2' onClick={()=>setTheme(false)} >Dark </Button >:<Button onClick={()=>setTheme(true)} className='ms-2'>Light </Button >
+                 theme? <Button className='m-2' onClick={()=>setTheme(false)} >Dark </Button >:<Button onClick={()=>setTheme(true)} className='m-2'>Light </Button >
                   }
                 
               </div>

@@ -15,7 +15,7 @@ const IndividualCourse = () => {
         <p>{course?.details}</p>
         <p>Cost: $ {course?.cost}</p>
       </div>
-      <Link to={'/checkout'}>
+      <Link to={`/checkout/${course?.id}`}>
         <Button>Get premium access</Button>
       </Link>
     </div>

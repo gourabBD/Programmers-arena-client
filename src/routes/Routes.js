@@ -64,11 +64,12 @@ import FAQ from './../component/FAQ/FAQ';
           element: <FAQ></FAQ>,
         },
         {
-          path: "/checkout",
+          path: "/checkout/:id",
           element: <PrivateRoute>
             {""}
             <CheckOut></CheckOut>
           </PrivateRoute>,
+          loader:({params})=>fetch(`https://assignment-10-servers.vercel.app/courses/${params.id}`)
         },
        
         
