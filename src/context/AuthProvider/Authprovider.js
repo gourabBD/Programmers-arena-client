@@ -9,6 +9,7 @@ import {
   signInWithEmailAndPassword,
   updateProfile,
   sendEmailVerification,
+  
 } from "firebase/auth";
 import app from "./../../firebase/firebase.config";
 
@@ -31,6 +32,7 @@ const AuthProvider = ({ children }) => {
     setLoading(true)
     return signInWithEmailAndPassword(auth, email, password);
   };
+  
 
 
   //updating displayName, and photoURL
@@ -58,10 +60,12 @@ const AuthProvider = ({ children }) => {
       unsubscribe();
     };
   }, []);
-  const authInfo = { user,loading, providerLogin, logOut, createUser, signIN ,updateUserProfile,verifyEmail,setLoading};
+  const authInfo = { user,loading, providerLogin, logOut, createUser, signIN ,updateUserProfile,verifyEmail,setLoading,setUser};
 
   return (
-    <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>
+    <AuthContext.Provider value={authInfo}>
+    {children}
+    </AuthContext.Provider>
   );
 };
 

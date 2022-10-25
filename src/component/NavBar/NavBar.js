@@ -1,11 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Image } from 'react-bootstrap';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import {Link} from "react-router-dom";
+import { BiUser } from 'react-icons/bi';
+import { AuthContext } from './../../context/AuthProvider/Authprovider';
+import { useContext } from 'react';
+import { Button } from 'react-bootstrap';
 
 const NavBar = () => {
+  const { user,logOut } = useContext(AuthContext);
+  const [theme,setTheme]=useState(true)
+  const handleLogOut=()=>{
+    logOut()
+    .then(() => {})
+    .catch((error) => console.error(error));
+  }
     return (
         <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
       <Container>
@@ -19,10 +30,57 @@ const NavBar = () => {
            
           </Nav>
           <Nav>
-            <Link className='me-3 text-decoration-none' to={'/login'}>Login</Link>
-            <Link className='me-3 text-decoration-none' to={'/register'} >
-             Register
-            </Link >
+          <div href="">
+                {user?.uid ? (
+                  <>
+                  <Link title={user?.displayName} className='me-2' >
+                {user?.photoURL ? (
+                  <Image
+                    src={user?.photoURL}
+                    style={{ height: "30px" }}
+                    roundedCircle
+                   
+                   
+                  ></Image>
+                ) : (
+                  <BiUser></BiUser>
+                )}
+              </Link>
+                    <span className='text-info'>{user?.displayName}</span>
+                    <Button
+                      variant="light"
+                      onClick={handleLogOut}
+                      className="ms-2 me-2"
+                    >
+                      {" "}
+                      Log Out
+                    </Button>
+                  </>
+                ) : (
+                  <>
+                    <Link
+                      className="me-2 fw-bold text-decoration-none"
+                      to={"/login"}
+                    >
+                      Login
+                    </Link>
+                    <Link
+                      className="me-2 fw-bold text-decoration-none"
+                      to={"/register"}
+                    >
+                      Register
+                    </Link>
+                  </>
+                )}
+              </div>
+              <div>
+                
+                 {
+                 theme? <Button className='ms-2' onClick={()=>setTheme(false)} >Dark </Button >:<Button onClick={()=>setTheme(true)} className='ms-2'>Light </Button >
+                  }
+                
+              </div>
+            
           </Nav>
         </Navbar.Collapse>
       </Container>

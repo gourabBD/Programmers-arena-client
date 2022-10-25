@@ -11,6 +11,8 @@ import Courses from './../component/Courses/Courses';
 import Login from './../component/Login/Login';
 import Register from './../component/Register/Register';
 import Blogs from './../component/Blogs/Blogs';
+import Terms from "../component/Terms/Terms";
+import IndividualCourse from './../component/IndividualCourse/IndividualCourse';
 
   export const router = createBrowserRouter([
     {
@@ -31,7 +33,7 @@ import Blogs from './../component/Blogs/Blogs';
         },
         {
           path: "/courses/:id",
-          element: <Courses></Courses>,
+          element: <IndividualCourse></IndividualCourse>,
           loader: ({ params }) =>
             fetch(
               `https://assignment-10-servers.vercel.app/courses/${params.id}`
@@ -49,6 +51,10 @@ import Blogs from './../component/Blogs/Blogs';
         {
           path: "/blogs",
           element: <Blogs></Blogs>,
+        },
+        {
+          path: "/terms",
+          element: <Terms></Terms>,
         },
         
        
