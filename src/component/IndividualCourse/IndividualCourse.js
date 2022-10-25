@@ -25,6 +25,7 @@ const IndividualCourse = () => {
         <Image style={{ height: "300px" }} src={course?.image}></Image>
         <p>{course?.details}</p>
         <p>Cost: $ {course?.cost}</p>
+        
       </div>
       <Link to={`/checkout/${course?.id}`}>
         <Button>Get premium access</Button>
