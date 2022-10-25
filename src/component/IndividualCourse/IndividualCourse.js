@@ -19,13 +19,14 @@ const IndividualCourse = () => {
     <div ref={componentRef}>
       <div className="d-flex justify-content-center m-3 ">
         <h1>{course?.course_name}</h1>
-        <Button className="ms-5 w-2" onClick={handlePrint}><BsDownload></BsDownload></Button>
+        <Button className="ms-5 w-2" onClick={handlePrint}
+        ><BsDownload></BsDownload></Button>
       </div>
       <div >
         <Image style={{ height: "300px" }} src={course?.image}></Image>
         <p>{course?.details}</p>
         <p>Cost: $ {course?.cost}</p>
-        
+
       </div>
       <Link to={`/checkout/${course?.id}`}>
         <Button>Get premium access</Button>
