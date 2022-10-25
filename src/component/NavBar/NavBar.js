@@ -27,6 +27,7 @@ const NavBar = () => {
           <Nav className="me-auto">
             <Link className='me-3 text-decoration-none' to={'/courses'}>Courses</Link>
             <Link className='me-3 text-decoration-none' to={'/Blogs'}>Blogs</Link>
+            <Link className='me-3 text-decoration-none' to={'/faqs'}>FAQ</Link>
            
           </Nav>
           <Nav>

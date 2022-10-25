@@ -18,9 +18,10 @@ const Courses = () => {
   
           <Col lg={3}>
             <div>
-              <Link >
-                <h4></h4>
-              </Link>
+            <h3 className='m-3'>Ongoing courses:</h3>
+             {
+                courses?.map(course=><Link className='text-decoration-none' key={course.id} to={`/courses/${course?.id}`}><h4>{course.course_name}</h4></Link>)
+             }
             </div>
           </Col>
         </Row>

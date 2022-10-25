@@ -1,5 +1,7 @@
 import React from "react";
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
+import { Button, Image } from "react-bootstrap";
+import CheckOut from './../CheckOutPage/CheckOut';
 
 const IndividualCourse = () => {
   const course = useLoaderData();
@@ -9,8 +11,13 @@ const IndividualCourse = () => {
         <h1>{course?.course_name}</h1>
       </div>
       <div>
-        
+        <Image style={{ height: "300px" }} src={course?.image}></Image>
+        <p>{course?.details}</p>
+        <p>Cost: $ {course?.cost}</p>
       </div>
+      <Link to={'/checkout'}>
+        <Button>Get premium access</Button>
+      </Link>
     </div>
   );
 };

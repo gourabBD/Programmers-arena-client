@@ -13,6 +13,9 @@ import Register from './../component/Register/Register';
 import Blogs from './../component/Blogs/Blogs';
 import Terms from "../component/Terms/Terms";
 import IndividualCourse from './../component/IndividualCourse/IndividualCourse';
+import CheckOut from './../component/CheckOutPage/CheckOut';
+import PrivateRoute from "./PrivateRoute/PrivateRoute";
+import FAQ from './../component/FAQ/FAQ';
 
   export const router = createBrowserRouter([
     {
@@ -56,9 +59,26 @@ import IndividualCourse from './../component/IndividualCourse/IndividualCourse';
           path: "/terms",
           element: <Terms></Terms>,
         },
+        {
+          path: "/faqs",
+          element: <FAQ></FAQ>,
+        },
+        {
+          path: "/checkout",
+          element: <PrivateRoute>
+            {""}
+            <CheckOut></CheckOut>
+          </PrivateRoute>,
+        },
+       
         
        
       ],
+      
+    },
+    {
+      path: "*",
+      element: <h1 className="text-danger">404:The URL you have used is not valid.</h1>,
     },
   ]);
   
