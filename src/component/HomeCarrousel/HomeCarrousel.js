@@ -17,7 +17,7 @@ const HomeCarrousel = () => {
           src="https://res.cloudinary.com/practicaldev/image/fetch/s--WGXoQbsM--/c_imagga_scale,f_auto,fl_progressive,h_900,q_auto,w_1600/https://media.licdn.com/mpr/mpr/AAEAAQAAAAAAAAr8AAAAJGUxMTdlYzM4LWZmNmEtNGZiNi05Mjc0LTc1ODQ0MWZmYzU4Nw.png"
           alt="First slide"
         />
-        <Carousel.Caption className='text-danger'>
+        <Carousel.Caption className='text-dark'>
           <h3>Vanilla Java Script.</h3>
           <p>Basics of Java script</p>
         </Carousel.Caption>
@@ -29,7 +29,7 @@ const HomeCarrousel = () => {
           alt="Second slide"
         />
 
-        <Carousel.Caption className='text-danger'>
+        <Carousel.Caption className='text-dark'>
           <h3>CSS</h3>
           <p>Styling User interface to make it much more attractive.</p>
         </Carousel.Caption>
@@ -41,7 +41,7 @@ const HomeCarrousel = () => {
           alt="Third slide"
         />
 
-        <Carousel.Caption className='text-danger'>
+        <Carousel.Caption className='text-dark'>
           <h3>React JS</h3>
           <p>
             A Java Script liabrary and the most popular one.
@@ -55,7 +55,7 @@ const HomeCarrousel = () => {
           alt="Third slide"
         />
 
-        <Carousel.Caption className='text-danger'>
+        <Carousel.Caption className='text-dark'>
           <h3>Bootstrap</h3>
           <p>
             A CSS framework and the most popular one.
@@ -69,7 +69,7 @@ const HomeCarrousel = () => {
           alt="Third slide"
         />
 
-        <Carousel.Caption className='text-danger'>
+        <Carousel.Caption className='text-dark'>
           <h3>Angular JS</h3>
           <p>
             A JavaScript framework and the most popular one.
@@ -83,7 +83,7 @@ const HomeCarrousel = () => {
           alt="Third slide"
         />
 
-        <Carousel.Caption className='text-danger'>
+        <Carousel.Caption className='text-dark'>
           <h3>Vue JS</h3>
           <p>
             A JavaScript framework and one of the  popular one.
